@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "server for crowdsourcing app",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "csvtojson": "^2.0.10",
+    "deep-email-validator": "^0.1.18",
+    "dotenv": "^10.0.0",
+    "email-existence": "^0.1.6",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "legit": "^1.0.9",
+    "mongoose": "^5.12.12",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

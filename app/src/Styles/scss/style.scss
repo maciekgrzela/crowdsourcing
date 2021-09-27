@@ -1,0 +1,305 @@
+@import 'utils';
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+$age-bar-width: 500px;
+$progress-width: 100px;
+$progress-height: 270px;
+$progress-slope: 40px;
+$font-size: 14px;
+$container-color: darken(#ffffff, 5);
+$progress-color: rgba(0, 0, 0, 0.1);
+$indicator-color: #3b4a39;
+$spaces: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: #000 !important;
+}
+
+p {
+  text-align: justify;
+}
+
+.page-wrapper {
+  height: calc(100vh - 70px) !important;
+  min-height: calc(100vh - 70px) !important;
+  padding-top: 100px;
+}
+
+.main-page {
+  &__insert-age {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: center;
+  }
+}
+
+.insert-age {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 300px;
+
+  &__input {
+    margin-bottom: 20px;
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      'a b c'
+      'd e f'
+      'g h i'
+      'z z z';
+    gap: 10px;
+  }
+
+  &__btn-zero {
+    grid-area: z;
+  }
+}
+
+.footer {
+  display: flex !important;
+  background-color: #eaeaea;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  color: darken(#eaeaea, 45%);
+
+  &__text {
+    display: block;
+  }
+}
+
+.user-dashboard {
+  &__user-info {
+    display: flex;
+    background-color: #e6e6e6 !important;
+    border: 0px !important;
+  }
+
+  &__welcome {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    & .ui.header {
+      margin-top: 0 !important;
+      font-size: 35px;
+    }
+  }
+
+  &__options {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+  }
+}
+
+.add-participant-form {
+  &__input {
+    width: 100%;
+  }
+}
+
+.experiments-stats {
+  display: flex;
+  justify-content: center;
+}
+
+.invalid-experiment {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -20px !important;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 500px !important;
+  height: 100% !important;
+  &__icon {
+    font-size: 150px;
+    color: #d8d8d8 !important;
+  }
+
+  &__header {
+    color: #d8d8d8 !important;
+  }
+}
+
+.invalid-register-token {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -20px !important;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 500px !important;
+  height: 100% !important;
+  &__icon {
+    font-size: 150px;
+    color: #d8d8d8 !important;
+  }
+
+  &__header {
+    color: #d8d8d8 !important;
+  }
+}
+
+.renew-experiment-labels {
+  display: flex;
+  justify-content: center;
+}
+
+.adjusting-feedback-labels {
+  display: flex;
+  max-width: 500px;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  justify-content: center;
+}
+
+.experiment-timer {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.agebar {
+  width: $age-bar-width;
+  background-color: $container-color;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  &__result {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  &__bar {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+}
+
+.volume-bar {
+  display: flex;
+  align-items: stretch;
+
+  &__progress {
+    width: $progress-width;
+    height: 0;
+    border-left: 0px solid transparent;
+    border-right: $progress-slope solid transparent;
+    border-top: $progress-height solid $progress-color;
+    position: relative;
+    order: 2;
+  }
+
+  &__icons {
+    display: flex;
+    transform: rotate(9deg);
+    flex-direction: column;
+    margin-top: (-1 * ($font-size));
+    margin-bottom: (-1 * ($font-size));
+    justify-content: space-between;
+    order: 3;
+    padding-top: 25px;
+    margin-left: 5px;
+
+    & img {
+      filter: invert(27%) sepia(1%) saturate(0%) hue-rotate(260deg)
+        brightness(101%) contrast(91%);
+      transform: rotate(-9deg);
+    }
+
+    & img:last-child {
+      transform: rotate(40deg);
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__labels {
+    order: 1;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    margin-top: (-1 * ($font-size)) / 2;
+    margin-bottom: (-1 * ($font-size)) / 2;
+    margin-right: 15px;
+    text-align: right;
+  }
+
+  &__space-wrapper {
+    width: $progress-width;
+    height: $progress-height;
+    position: absolute;
+    top: -1 * $progress-height;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  @each $space in $spaces {
+    &__space:nth-child(#{$space + 1}) {
+      width: ($progress-width * 1.4 - ($progress-slope + $space * 4));
+      height: 2px;
+      background-color: $container-color;
+    }
+  }
+
+  &__indicator {
+    height: 5px;
+    width: 60px;
+    background-color: $indicator-color;
+    position: absolute;
+    border-radius: 2px;
+  }
+}
+
+.interface-toggle {
+  display: flex;
+  width: 150px;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.experiment-rules {
+  list-style: none;
+  counter-reset: my-counter;
+  padding-left: 0;
+
+  &__item {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: justify;
+    counter-increment: my-counter;
+    display: flex;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  &__item::before {
+    content: '0' counter(my-counter);
+    font-weight: bold;
+    font-size: 3rem;
+    margin-right: 1.5rem;
+    line-height: 1;
+  }
+}

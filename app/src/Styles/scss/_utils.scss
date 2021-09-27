@@ -1,0 +1,51 @@
+$space-amounts: (0, 1, 2, 3, 4, 5);
+
+@each $space in $space-amounts {
+  .m-#{$space} {
+    margin: #{$space}rem !important;
+  }
+  .my-#{$space} {
+    margin-top: #{$space}rem !important;
+    margin-bottom: #{$space}rem !important;
+  }
+  .mx-#{$space} {
+    margin-left: #{$space}rem !important;
+    margin-right: #{$space}rem !important;
+  }
+  .mt-#{$space} {
+    margin-top: #{$space}rem !important;
+  }
+  .mb-#{$space} {
+    margin-bottom: #{$space}rem !important;
+  }
+  .ml-#{$space} {
+    margin-left: #{$space}rem !important;
+  }
+  .mr-#{$space} {
+    margin-right: #{$space}rem !important;
+  }
+
+  .p-#{$space} {
+    padding: #{$space}rem !important;
+  }
+  .py-#{$space} {
+    padding-top: #{$space}rem !important;
+    padding-bottom: #{$space}rem !important;
+  }
+  .px-#{$space} {
+    padding-left: #{$space}rem !important;
+    padding-right: #{$space}rem !important;
+  }
+  .pt-#{$space} {
+    padding-top: #{$space}rem !important;
+  }
+  .pb-#{$space} {
+    padding-bottom: #{$space}rem !important;
+  }
+  .pl-#{$space} {
+    padding-left: #{$space}rem !important;
+  }
+  .pr-#{$space} {
+    padding-right: #{$space}rem !important;
+  }
+}

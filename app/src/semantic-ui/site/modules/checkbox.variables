@@ -1,0 +1,6 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@toggleOnLaneColor: @green;
+@toggleOnFocusLaneColor: darken(@green, -10);
